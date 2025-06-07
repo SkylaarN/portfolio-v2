@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nkosinathi Silima</title>
+<link rel="stylesheet" href="style.css" />
+<!-- For icons (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Starfield Background -->
+<div id="tsparticles"></div>
+
+<!-- Navbar (only on small screens) -->
+<nav class="navbar">
+  <div class="logo">Nkosinathi Silima</div>
+  <ul class="nav-links" id="navLinks" data-open="false">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#resume">Resume</a></li>
+  </ul>
+  <div class="burger" id="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+
+
+<!-- 2-column Layout -->
+<div class="container">
+  <!-- Left Side (About Me) -->
+  <div class="left-section">
+    <div>
+        <h2>Nkosinathi Silima</h2>
+       <p>
+
+Hi, I’m a recent graduate and aspiring frontend developer with a passion for clean, responsive web apps. I'm building skills in React and Next.js, with experience in JavaScript, Python, and Flutter. I love learning, problem-solving, and creating great user experiences.</p>
+    </div>
+  </div>
+
+  <!-- Right Side (My Projects) -->
+  <div class="right-section">
+    <h2>My Projects</h2>
+    <div class="project-list">
+
+      <!-- test -->
+<div class="project-card">
+  <div class="project-image-container">
+    <img src="images/fit_link.jpg" alt="Project Screenshot">
+    <a href="https://github.com/SkylaarN/fitlink" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="project-info">
+    <h3>FitLink</h3>
+    <p class="description">Fitness tracker app that counts steps and maps activity routes using Google Maps API</p>
+    <div class="tech-stack">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="project-card">
+  <div class="project-image-container">
+    <img src="./images/main_drive_dark.png" alt="Project Screenshot">
+    <a href="https://github.com/SkylaarN/main_drive" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="project-info">
+    <h3>Main drive</h3>
+    <p class="description">Storage management app to store and organize files on a VPS.(Google Drive clone)</p>
+    <div class="tech-stack">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+    </div>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-image-container">
+    <img src="./images/3d-portfolio.png" alt="Project Screenshot">
+    <a href="https://github.com/SkylaarN/my-3D-portfolio" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="project-info">
+    <h3>My 3D-portfolio</h3>
+    <p class="description">3D website portfolio showcasing my creative experiments and projects.</p>
+    <div class="tech-stack">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <div class="extra-projects hide-on-mobile">
+      <!-- Extra proects to hide on mobile here -->
+<div class="project-card">
+  <div class="project-image-container">
+    <img src="images/amazing_site.png" alt="Project Screenshot">
+    <a href="https://github.com/SkylaarN/amazing-site" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="project-info">
+    <h3>Gsap site</h3>
+    <p class="description">A mini world of adventure—created while learning GSAP.</p>
+    <div class="tech-stack">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+    </div>
+  </div>
+</div>
+
+  <br>
+
+<div class="project-card">
+  <div class="project-image-container">
+    <img src="images/fit_link.jpg" alt="Project Screenshot">
+    <a href="https://github.com/SkylaarN/fitlink" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="project-info">
+    <h3>FitLink</h3>
+    <p class="description">Brief description of the project and its purpose.</p>
+    <div class="tech-stack">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+    </div>
+  </div>
+</div>
+    </div>
+    
+      
+    </div>
+  </div>
+  <div class="contact-form-mobile">
+  <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Name" name="from_name" required />
+        <input type="email" placeholder="Email" name="from_email" required />
+        <textarea placeholder="Your message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+  <br><br><br>
+</div>
+</div>
+
+
+
+
+  <!-- Floating icons/buttons -->
+<div class="floating-icons">
+  <a href="#" class="icon" data-contact="📞 WhatsApp: 068-079-8181"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://github.com/SkylaarN" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+  <a href="#" class="icon" data-contact="✉️ Email: nkosinathisilima@gmail.com"><i class="fas fa-envelope"></i></a>
+  <button href="./other/resume.pdf" target="_blank" class="btn">Resume</button>
+  <button class="btn" id="contactBtn">Contact</button>
+</div>
+
+<!-- Contact details popup -->
+<div id="contactPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <p id="contactInfo"></p>
+  </div>
+</div>
+
+
+
+  <!-- Popup Contact Form -->
+  <div class="popup" id="popupForm">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>Contact Me</h2>
+      <form id="contactFormPopup">
+        <input type="text" placeholder="Name" name="from_name" required />
+        <input type="email" placeholder="Email" name="from_email" required />
+        <textarea placeholder="Your message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+<!-- EmailJS and Form Submission Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("CPW3grpOe_8N06K-p");
+  })();
+
+  // Handle form submission for mobile form
+  document.getElementById("contact-form-mobile")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+      emailjs.sendForm("service_rdqoeyh", "template_ldxpwqo", this)
+        .then(() => {
+          alert("Message sent successfully!");
+          this.reset();
+        }, (error) => {
+          alert("Failed to send message. Please try again later.");
+          console.log(error);
+        });
+    });
+
+  // Handle form submission for popup form
+  document.getElementById("contactFormPopup")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+      emailjs.sendForm("service_rdqoeyh", "template_ldxpwqo", this)
+        .then(() => {
+          alert("Message sent successfully!");
+          document.getElementById("popupForm").classList.remove("show");
+          this.reset();
+        }, (error) => {
+          alert("Failed to send message. Please try again later.");
+          console.log(error);
+        });
+    });
+</script>
+
+</body>
+</html>

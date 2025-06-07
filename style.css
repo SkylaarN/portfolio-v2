@@ -1,0 +1,563 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden; /* Hide default scrolling */
+  background-color: black;
+}
+
+/* Starry background container */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Navbar: only show on small screens */
+.navbar {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Main container: split into left and right */
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Section: fully centered content */
+.left-section {
+  flex: 0 0 300px;
+  background: rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateX(200px);  /* 40px existing + 40px push to the right */
+}
+
+
+
+.left-section h2 {
+  margin-bottom: 10px;
+  color: lightblue;
+}
+
+.left-section p {
+  line-height: 1.6;
+}
+
+/* Right Section: scrollable project list pushed to far right */
+.right-section {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* push content to the far right */
+}
+
+.right-section h2 {
+  margin-bottom: 20px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px; /* optional max-width for project cards */
+}
+
+.project-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: background 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: solid lightblue;
+}
+
+.project-card:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 150px; /* adjust as needed */
+  overflow: hidden;
+}
+
+.project-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.github-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.github-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project-info {
+  padding: 10px;
+}
+
+.project-info h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+}
+
+.project-info .description {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 8px;
+}
+
+.tech-stack img {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Floating icons & buttons on bottom left */
+.floating-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+.floating-icons .icon,
+.floating-icons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.floating-icons .icon:hover,
+.floating-icons .btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.floating-icons .btn {
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+/* Remove centering, style as tooltip */
+.contact-popup {
+  position: absolute;
+  background: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1000;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.contact-popup::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6px; /* Position the arrow */
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Show the navbar */
+  .navbar {
+    display: flex;
+  }
+
+  /* Remove left-right split, show in a column */
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Left section as a top section */
+  .left-section {
+    position: relative;
+    transform: translateX(0);
+    height: auto;
+    width: 100%;
+    flex: none;
+  }
+
+  /* Right section below about me */
+  .right-section {
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .right-section h2 {
+    text-align: center;
+  }
+
+  /* Show only 3 projects on mobile */
+  .hide-on-mobile {
+    display: none;
+  }
+
+  /* Project cards full width */
+  .project-list {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Navbar */
+.navbar {
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e1e;
+    color: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #444;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #2c2c2c;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: background 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .burger.open .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .burger.open .line2 {
+    opacity: 0;
+  }
+  .burger.open .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Smooth transitions and font for overall site */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  background: #121212;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* About & Projects Section Stacking */
+@media (max-width: 991px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .project-card {
+    max-width: 100%;
+    margin: 15px 0;
+  }
+
+  /* Limit to 3 project cards on mobile */
+  .project-card:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .floating-icons {
+    display: none;
+  }
+}
+
+/* Hide contact form by default */
+.contact-form-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .contact-form-mobile {
+    display: block;
+    padding: 20px;
+    padding-bottom: 50px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: 20px;
+    color: #fff;
+  }
+
+  .contact-form-mobile h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .contact-form-mobile form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form-mobile input,
+  .contact-form-mobile textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .contact-form-mobile button {
+    padding: 10px;
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .contact-form-mobile button:hover {
+    background: #0056b3;
+  }
+}
+
+@media (max-width: 991px) {
+  html, body {
+    overflow: auto; /* Enable scrolling */
+  }
+}
+
+/* Adjust GitHub icon (white) */
+.github-icon i {
+  color: #fff;
+  font-size: 24px;
+}
+
+/* Adjust tech stack icons with their respective colors */
+.tech-stack i.fa-html5 {
+  color: #e34c26; /* HTML5 orange */
+}
+
+.tech-stack i.fa-css3-alt {
+  color: #1572B6; /* CSS3 blue */
+}
+
+.tech-stack i.fa-js {
+  color: #f7df1e; /* JavaScript yellow */
+}
+
+.tech-stack i.fa-react {
+  color: #61dafb; /* React cyan */
+}
+
+.tech-stack i.fa-node {
+  color: #68a063; /* Node.js green */
+}
+
+.tech-stack i.fa-python {
+  color: #3776ab; /* Python blue */
+}
+
+/* Add more as needed! */
+ 
+/* Popup backdrop and centering */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup.show {
+  display: flex;
+}
+
+/* Popup content styling */
+.popup-content {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.popup-content button {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #555;
+}
+
+/* Close button styling */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
