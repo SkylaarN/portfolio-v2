@@ -19,8 +19,8 @@
   <ul class="nav-links" id="navLinks" data-open="false">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#resume">Resume</a></li>
+    <li><a href="./other/resume.pdf" >Resume</a></li>
+    <li><a href="#contact-us">Contact</a></li>
   </ul>
   <div class="burger" id="burger">
     <div class="line1"></div>
@@ -33,17 +33,16 @@
 <!-- 2-column Layout -->
 <div class="container">
   <!-- Left Side (About Me) -->
-  <div class="left-section">
+  <div class="left-section" id="about">
     <div>
         <h2>Nkosinathi Silima</h2>
        <p>
-
-Hi, I’m a recent graduate and aspiring frontend developer with a passion for clean, responsive web apps. I'm building skills in React and Next.js, with experience in JavaScript, Python, and Flutter. I love learning, problem-solving, and creating great user experiences.</p>
+        Hi, I’m a recent graduate and aspiring frontend developer with a passion for clean, responsive web apps. I'm building skills in React and Next.js, with experience in JavaScript, Python, and Flutter. I love learning, problem-solving, and creating great user experiences.</p>
     </div>
   </div>
 
   <!-- Right Side (My Projects) -->
-  <div class="right-section">
+  <div class="right-section" id="projects">
     <h2>My Projects</h2>
     <div class="project-list">
 
@@ -59,9 +58,8 @@ Hi, I’m a recent graduate and aspiring frontend developer with a passion for c
     <h3>FitLink</h3>
     <p class="description">Fitness tracker app that counts steps and maps activity routes using Google Maps API</p>
     <div class="tech-stack">
-      <i class="fab fa-html5"></i>
-      <i class="fab fa-css3-alt"></i>
-      <i class="fab fa-js"></i>
+      <i class="fas fa-database"></i> <!-- For SQL -->
+      <span class="custom-icon">Flutter</span> <!-- Flutter placeholder -->
     </div>
   </div>
 </div>
@@ -81,6 +79,7 @@ Hi, I’m a recent graduate and aspiring frontend developer with a passion for c
       <i class="fab fa-html5"></i>
       <i class="fab fa-css3-alt"></i>
       <i class="fab fa-js"></i>
+      <span class="custom-icon">TS</span> <!-- TypeScript placeholder -->
     </div>
   </div>
 </div>
@@ -99,6 +98,7 @@ Hi, I’m a recent graduate and aspiring frontend developer with a passion for c
       <i class="fab fa-html5"></i>
       <i class="fab fa-css3-alt"></i>
       <i class="fab fa-js"></i>
+      <span class="custom-icon">3D</span>
     </div>
   </div>
 </div>
@@ -126,25 +126,6 @@ Hi, I’m a recent graduate and aspiring frontend developer with a passion for c
   </div>
 </div>
 
-  <br>
-
-<div class="project-card">
-  <div class="project-image-container">
-    <img src="images/fit_link.jpg" alt="Project Screenshot">
-    <a href="https://github.com/SkylaarN/fitlink" target="_blank" class="github-icon">
-      <i class="fab fa-github"></i>
-    </a>
-  </div>
-  <div class="project-info">
-    <h3>FitLink</h3>
-    <p class="description">Brief description of the project and its purpose.</p>
-    <div class="tech-stack">
-      <i class="fab fa-html5"></i>
-      <i class="fab fa-css3-alt"></i>
-      <i class="fab fa-js"></i>
-    </div>
-  </div>
-</div>
     </div>
     
       
@@ -156,7 +137,7 @@ Hi, I’m a recent graduate and aspiring frontend developer with a passion for c
         <input type="text" placeholder="Name" name="from_name" required />
         <input type="email" placeholder="Email" name="from_email" required />
         <textarea placeholder="Your message" name="message" required></textarea>
-        <button type="submit">Send</button>
+        <button type="submit" id="contact-us">Send</button>
       </form>
   <br><br><br>
 </div>
